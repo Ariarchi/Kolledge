@@ -11,6 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="css/animate.css" />
     <link rel="stylesheet" href="css/main.css" />
   </head>
   <body>
@@ -20,18 +21,29 @@
           <ul class="header__menu">
             <li><a class="menu__link" href="#top">Главная</a></li>
             <li><a class="menu__link" href="#about">Обо мне</a></li>
-            <li><a class="menu__link" href="#">Отзывы</a></li>
+            <li><a class="menu__link" href="#reviews">Отзывы</a></li>
           </ul>
-          <a class="header__button" href="#">Оставить заявку</a>
+          <a class="header__button popup__link" href="#popup"
+            >Оставить заявку</a
+          >
         </div>
         <div class="top-section__wrapper">
-          <div class="top-section__left">
+          <div class="top-section__left animated fadeInDownBig">
             <h1>Artur Kononovich</h1>
             <h2>Full Stack Web Developer</h2>
-            <a class="top-section__left-button" href="#">Оставить заявку</a>
+            <a
+              class="
+                top-section__left-button
+                popup__link
+                animated
+                fadeInLeftBig
+              "
+              href="#popup"
+              >Оставить заявку</a
+            >
           </div>
-          <div class="top-section__right">
-            <a href="#" class="top-section__right-img">
+          <div class="top-section__right animated fadeInRight">
+            <a href="#popup" class="top-section__right-img popup__link">
               <img src="img/top-section__image.png" alt="" />
             </a>
           </div>
@@ -40,7 +52,7 @@
     </div>
     <div class="about" id="about">
       <div class="container">
-        <h2 class="about__title title">Обо мне</h2>
+        <h2 class="title about__title animated">Обо мне</h2>
         <div class="about__info">
           <div class="about__info__photo">
             <div class="main">
@@ -74,42 +86,42 @@
           </div>
         </div>
         <div class="about__advantage">
-          <div class="item">
+          <div class="item item-1 animated">
             <div class="icon"><img src="img/advantages4.png" alt="" /></div>
             <div class="title">Опыт</div>
             <div class="text">2+ года работы</div>
           </div>
-          <div class="item">
+          <div class="item item-2 animated">
             <div class="icon"><img src="img/advantages2.png" alt="" /></div>
             <div class="title">Выполнено</div>
             <div class="text">120+ проектов выполнено</div>
           </div>
-          <div class="item">
+          <div class="item item-3 animated">
             <div class="icon"><img src="img/advantages3.svg" alt="" /></div>
             <div class="title">Тип работы</div>
             <div class="text">Фрилансер</div>
           </div>
-          <div class="item">
+          <div class="item item-4 animated">
             <div class="icon"><img src="img/advantages4.png" alt="" /></div>
             <div class="title">Обучение</div>
             <div class="text">Free Code Camp</div>
           </div>
-          <div class="item">
+          <div class="item item-5 animated">
             <div class="icon"><img src="img/advantages7.svg" alt="" /></div>
             <div class="title">Технологии</div>
             <div class="text">Большой стек веб технологий</div>
           </div>
-          <div class="item">
+          <div class="item item-6 animated">
             <div class="icon"><img src="img/advantages5.svg" alt="" /></div>
             <div class="title">Отзывы</div>
             <div class="text">Боле 60 отзывов на Kwork</div>
           </div>
-          <div class="item">
+          <div class="item item-7 animated">
             <div class="icon"><img src="img/advantages8.svg" alt="" /></div>
             <div class="title">Портфолио</div>
             <div class="text">Множество крутых проектов</div>
           </div>
-          <div class="item">
+          <div class="item item-8 animated">
             <div class="icon"><img src="img/advantages6.svg" alt="" /></div>
             <div class="title">Рейтинг 5.0</div>
             <div class="text">Идеальный рейтинг на биржах</div>
@@ -117,12 +129,45 @@
         </div>
       </div>
     </div>
-    <div class="reviews">
+    <div class="reviews" id="reviews">
       <div class="container">
-        <h2 class="reviews__title title">Отзывы</h2>
+        <h2 class="reviews__title title animated">Отзывы</h2>
         <div class="reviews__wrapper">В разработке...</div>
       </div>
     </div>
+    <div class="form">
+      <div class="container">
+        <div class="form__wrapper">
+          <form action="#form" id="form" method="post">
+            <label
+              ><span>Ваше имя*</span>
+              <input
+                type="text"
+                name="name"
+                placeholder="Введите Имя"
+                required
+              />
+            </label>
+            <label
+              ><span>Ваш телефон*</span>
+              <input
+                type="tel"
+                name="phone"
+                pattern="[0-9]{12}"
+                placeholder="Телефон"
+                required
+              />
+            </label>
+            <label
+              ><span>Текст сообщения</span>
+              <input type="text" name="text" placeholder="Оставтье записочку" />
+            </label>
+            <button type="submit">Оставить заявку</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
     <div class="footer">
       <div class="container">
         <div class="footer__wrapper">
@@ -135,9 +180,9 @@
           </div>
           <div class="footer__column">
             <a class="footer__link" href="#top">Главная</a>
-            <a class="footer__link" href="#top">Обо мне</a>
-            <a class="footer__link" href="#top">Отзывы</a>
-            <a class="footer__link" href="#top">Технологии</a>
+            <a class="footer__link" href="#about">Обо мне</a>
+            <a class="footer__link" href="#reviews">Отзывы</a>
+            <a class="footer__link" href="#">Технологии</a>
           </div>
           <div class="footer__column">
             <a
@@ -155,7 +200,7 @@
                   d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
                 ></path></svg
             ></a>
-            <a rel="nofollow" target="_blank" href="https://t.me/semenyuk73"
+            <a rel="nofollow" target="_blank" href="https://t.me/"
               >Rasal<svg
                 width="24px"
                 height="24px"
@@ -208,5 +253,56 @@
         </div>
       </div>
     </div>
+    <div id="popup" class="popup">
+      <div class="popup__body">
+        <div class="popup__content">
+          <form action="#form" id="form" method="post">
+            <label
+              ><span>Ваше имя*</span>
+              <input
+                type="text"
+                name="name"
+                placeholder="Введите Имя"
+                required
+              />
+            </label>
+            <label
+              ><span>Ваш телефон*</span>
+              <input
+                type="tel"
+                name="phone"
+                pattern="[0-9]{12}"
+                placeholder="Телефон"
+                required
+              />
+            </label>
+            <label
+              ><span>Текст сообщения</span>
+              <input type="text" name="text" placeholder="Оставтье записочку" />
+            </label>
+            <button type="submit">Оставить заявку</button>
+          </form>
+          <img
+            src="img/popup__top_left.png"
+            alt=""
+            class="particle particle__top_left"
+          />
+          <img
+            src="img/popup__top_right.png"
+            alt=""
+            class="particle particle__top_right"
+          />
+          <img
+            src="img/popup__bottom.png"
+            alt=""
+            class="particle particle__bottom"
+          />
+        </div>
+      </div>
+    </div>
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/popup.js"></script>
   </body>
 </html>

@@ -82,6 +82,7 @@ body {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   font-size: 24px;
+  overflow-x: hidden;
 }
 
 body::-webkit-scrollbar {
@@ -104,6 +105,11 @@ body::-webkit-scrollbar-track {
   padding: 0 25px;
   max-width: 1340px;
   margin: 0 auto;
+}
+
+.animated {
+  opacity: 0;
+  transition: 0.8s ease all;
 }
 
 /*************** top-section ***************/
@@ -160,7 +166,12 @@ body::-webkit-scrollbar-track {
 }
 
 .top-section__left {
-  width: 50%;
+  width: 55%;
+}
+
+.top-section__left h1,
+h2 animated {
+  translate: (0, 120%);
 }
 
 .top-section__left h1 {
@@ -333,6 +344,127 @@ body::-webkit-scrollbar-track {
 .reviews__title {
   margin: 0 0 80px 0;
 }
+/*********************** form ***********************/
+
+.form {
+  background: url(../img/form__bg.jpg);
+  padding: 80px 0;
+  overflow: hidden;
+}
+
+.form__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form form {
+  border-radius: 20px;
+  border: 2px solid #fff;
+  box-shadow: 0 38px 84px rgb(27 20 168 / 5%);
+  padding: 36px 64px 64px 50px;
+  background: linear-gradient(
+    -45deg,
+    rgba(191, 178, 255, 0.5) 0%,
+    rgba(235, 240, 255, 0.5) 100%
+  );
+  backdrop-filter: blur(20px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form form label {
+  width: 430px;
+  margin-bottom: 35px;
+}
+
+.form form label span {
+  display: block;
+  margin: 0 0 20px 25px;
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 18px;
+}
+
+.form form label input {
+  width: 100%;
+  height: 70px;
+  font-size: 20px;
+  color: #9193ff;
+  padding-left: 25px;
+  box-shadow: 0 38px 84px rgb(27 20 168 / 5%);
+  border-radius: 30px;
+  border: 2px solid #fff;
+  background: rgba(242, 245, 255, 0.5);
+  -webkit-backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  outline: #fff;
+  transition: 0.5s all;
+}
+
+.form form label input:hover {
+  border: 2px solid #9193ff;
+  transition: 0.5s all;
+}
+
+.form form button {
+  border-radius: 20px;
+  background: #9193ff;
+  border: 3px solid #9193ff;
+  width: 300px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+  transition: 0.5s all;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.form form button:hover {
+  transition: 0.5s all;
+  background: transparent;
+  color: #9193ff;
+}
+
+/** placeholder **/
+::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.3);
+  opacity: 0.5;
+}
+::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.3);
+  opacity: 0.5;
+} /* Firefox 19+ */
+:-moz-placeholder {
+  color: rgba(0, 0, 0, 0.3);
+  opacity: 0.5;
+} /* Firefox 18- */
+:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.3);
+  opacity: 0.5;
+}
+
+:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+:focus::-moz-placeholder {
+  color: transparent;
+}
+:focus:-moz-placeholder {
+  color: transparent;
+}
+:focus:-ms-input-placeholder {
+  color: transparent;
+}
+/*  */
 
 /*********************** footer ***********************/
 
@@ -384,10 +516,15 @@ body::-webkit-scrollbar-track {
   transition: 0.3s all;
 }
 
+.footer__button:hover {
+  transition: 0.3s all;
+  background: #9193ff;
+  color: #fff;
+}
+
 .footer__column:nth-child(2) {
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
 }
 
 .footer__column:nth-child(2) a {
@@ -397,6 +534,11 @@ body::-webkit-scrollbar-track {
   font-weight: 600;
   margin-bottom: 50px;
   transition: 0.3s all;
+}
+
+.footer__column:nth-child(2) a:hover {
+  transition: 0.3s all;
+  color: #9193ff;
 }
 
 .footer__column:nth-child(2) a:nth-last-child(1) {
@@ -422,6 +564,11 @@ body::-webkit-scrollbar-track {
   justify-content: space-between;
 }
 
+.footer__column:nth-child(3) a:hover {
+  transition: 0.3s all;
+  color: #9193ff;
+}
+
 .footer__column:nth-child(3) a:nth-last-child(1) {
   margin-bottom: 0;
 }
@@ -434,6 +581,158 @@ body::-webkit-scrollbar-track {
   fill: #fff;
   transition: 0.3s all;
 }
+
+.footer__column:nth-child(3) a:hover svg path {
+  fill: #9193ff;
+  transition: 0.3s all;
+}
+
+/**** popup ****/
+
+.popup {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(36, 36, 71, 0.5);
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: all 0.8s ease 0s;
+}
+
+.popup.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup.open .popup__content {
+  transform: translate(0px, 0px);
+  opacity: 1;
+}
+
+.popup__body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup__content {
+  position: relative;
+  width: 900px;
+  height: 700px;
+  background: linear-gradient(135deg, #e0edff 0%, #e8eefe 50%, #cecbff 100%);
+  border-radius: 30px;
+  box-shadow: 0 102px 92px rgb(27 20 168 / 21%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translate(0px, -100%);
+  opacity: 0;
+  transition: all 0.8s ease 0s;
+}
+
+.popup form {
+  position: relative;
+  z-index: 12;
+  width: 540px;
+  height: 600px;
+  box-shadow: 0 38px 84px rgb(27 20 168 / 5%);
+  border-radius: 30px;
+  border: 2px solid #fff;
+  -webkit-backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 40px 0 40px;
+}
+
+.popup form label {
+  width: 100%;
+  margin-bottom: 35px;
+}
+
+.popup form label span {
+  display: block;
+  margin-left: 25px;
+  margin-bottom: 10px; /*10*/
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 18px;
+}
+
+.popup form label input {
+  width: 100%;
+  height: 70px;
+  font-size: 20px;
+  color: #9193ff;
+  padding-left: 25px;
+  box-shadow: 0 38px 84px rgb(27 20 168 / 5%);
+  border-radius: 30px;
+  border: 2px solid #fff;
+  background: rgba(242, 245, 255, 0.5);
+  -webkit-backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  outline: #fff;
+  transition: 0.5s all;
+}
+
+.popup form label input:hover {
+  border: 2px solid #9193ff;
+  transition: 0.5s all;
+}
+
+.popup form button {
+  border-radius: 20px;
+  background: #9193ff;
+  border: 3px solid #9193ff;
+  width: 300px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+  transition: 0.5s all;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.popup form button:hover {
+  transition: 0.5s all;
+  background: transparent;
+  color: #9193ff;
+}
+
+.popup .particle {
+  position: absolute;
+  z-index: 11;
+}
+
+.popup .particle__top_left {
+  top: 30px;
+  left: 50px;
+}
+
+.popup .particle__top_right {
+  right: 30px;
+  top: -80px;
+}
+
+.popup .particle__bottom {
+  bottom: 30px;
+  right: 200px;
+}
+
 /*********************** Адаптация ***********************/
 
 @media screen and (max-width: 1600px) {
@@ -444,6 +743,33 @@ body::-webkit-scrollbar-track {
     width: 250px;
     height: 250px;
     margin-bottom: 75px;
+  }
+}
+
+/*992px-1200px*/
+@media screen and (max-width: 1200px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+/*768px-992px*/
+@media screen and (max-width: 992px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+/*576px-768px*/
+@media screen and (max-width: 768px) {
+  .container {
+    max-width: 540px;
+  }
+}
+/*320px-576px*/
+@media screen and (max-width: 576px) {
+  .container {
+    width: 100%;
   }
 }
 
