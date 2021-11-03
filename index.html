@@ -138,12 +138,13 @@
     <div class="form">
       <div class="container">
         <div class="form__wrapper">
-          <form action="#form" id="form" method="post">
+          <form id="form" action="#">
             <label
               ><span>Ваше имя*</span>
               <input
                 type="text"
                 name="name"
+                pattern="^[A-Za-zА-Яа-яЁё]+$"
                 placeholder="Введите Имя"
                 required
               />
@@ -153,8 +154,8 @@
               <input
                 type="tel"
                 name="phone"
-                pattern="[0-9]{12}"
-                placeholder="Телефон"
+                pattern="^[ 0-9]+$"
+                placeholder="Номер телефона без +"
                 required
               />
             </label>
@@ -256,12 +257,13 @@
     <div id="popup" class="popup">
       <div class="popup__body">
         <div class="popup__content">
-          <form action="#form" id="form" method="post">
+          <form id="form" action="#">
             <label
               ><span>Ваше имя*</span>
               <input
                 type="text"
                 name="name"
+                pattern="^[A-Za-zА-Яа-яЁё]+$"
                 placeholder="Введите Имя"
                 required
               />
@@ -271,8 +273,8 @@
               <input
                 type="tel"
                 name="phone"
-                pattern="[0-9]{12}"
-                placeholder="Телефон"
+                pattern="^[ 0-9]+$"
+                placeholder="Номер телефона без +"
                 required
               />
             </label>
