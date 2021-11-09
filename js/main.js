@@ -1,5 +1,5 @@
 "use strict";
-document.addEventListener("DOMContentLoaded", function () {
+$(document).ready(function () {
   $(function () {
     $(window).scroll(function () {
       $(".about__title").each(function () {
@@ -112,5 +112,37 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // popup
+  // слайдер
+
+  $(".slider").slick({
+    arrows: true,
+    dots: true,
+    slidesToShow: 1,
+    autoplay: true,
+    speed: 1500,
+    autoplaySpeed: 3000,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          arrows: false,
+        },
+      },
+    ],
+  });
+
+  // top arrow
+  $(window).scroll(function () {
+    let scrolled = $(window).scrollTop();
+
+    if (scrolled > 300) {
+      $("#back_to_top").addClass("active");
+    } else {
+      $("#back_to_top").removeClass("active");
+    }
+  });
+
+  $("#back_to_top").click(function () {
+    $("body,html").animate({ scrollTop: 0 }, 1000);
+  });
 });
